@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F5A623</color>
+    <color name="colorPrimaryDark">#1C1C1E</color>
+    <color name="colorAccent">#F5A623</color>
+
+    <color name="dark_bg">#1C1C1E</color>
+    <color name="orange_primary">#F5A623</color>
+    <color name="card_white">#FFFFFF</color>
+    <color name="light_bg">#F2F2F2</color>
+    <color name="text_dark">#1C1C1E</color>
+    <color name="text_muted">#AAAAAA</color>
+    <color name="green_income">#2E7D32</color>
+    <color name="red_expense">#C62828</color>
+    <color name="dark_green_btn">#2E5043</color>
+    <color name="dark_nav">#2C2C2E</color>
+</resources>

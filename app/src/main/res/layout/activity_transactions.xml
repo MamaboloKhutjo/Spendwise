@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/header_bg_rounded" android:orientation="vertical" android:paddingStart="20dp" android:paddingTop="48dp" android:paddingEnd="20dp" android:paddingBottom="24dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•••" android:textColor="#FFFFFF" android:textSize="20sp" android:layout_marginBottom="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transactions" android:textColor="#FFFFFF" android:textSize="32sp" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select Period" android:textColor="#1C1C1E" android:textSize="15sp" android:textStyle="bold" android:paddingHorizontal="16dp" android:paddingTop="16dp" android:paddingBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tvStartDate"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_bg_light"
+                    android:gravity="center"
+                    android:text="Start Date"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvEndDate"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_bg_light"
+                    android:gravity="center"
+                    android:text="End Date"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transaction History" android:textColor="#1C1C1E" android:textSize="15sp" android:textStyle="bold" android:paddingHorizontal="16dp" android:paddingBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/transactionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <Button
+                android:id="@+id/btnViewMore"
+                android:layout_width="220dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
+                android:text="View More"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:backgroundTint="#F5A623"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout android:id="@+id/bottomNav" android:layout_width="match_parent" android:layout_height="64dp" android:layout_alignParentBottom="true" android:background="#2C2C2E" android:orientation="horizontal">
+        <LinearLayout android:id="@+id/navDashboard" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_dashboard" android:tint="#AAAAAA"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dashboard" android:textColor="#AAAAAA" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navTransactions" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_wallet" android:tint="#F5A623"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transactions" android:textColor="#F5A623" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center">
+            <View android:layout_width="56dp" android:layout_height="56dp"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navBudget" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_budget" android:tint="#AAAAAA"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Budget" android:textColor="#AAAAAA" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navMe" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_profile" android:tint="#AAAAAA"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Me" android:textColor="#AAAAAA" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView android:id="@+id/fabAdd" android:layout_width="56dp" android:layout_height="56dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:layout_marginBottom="20dp" android:src="@drawable/ic_add" android:background="@drawable/fab_bg" android:padding="14dp" android:elevation="6dp"/>
+
+</RelativeLayout>
