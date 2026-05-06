@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Bar chart base -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M5,20h2v-8H5v8zM9,20h2v-5H9v5zM13,20h2v-11h-2v11zM17,20h2v-14h-2v14z"/>
+    <!-- Trending arrow -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M16,6l2.29,2.29 -4.88,4.88 -4,-4L2,16.59 3.41,18l6,-6 4,4 6.3,-6.29L22,12V6z"/>
+</vector>
