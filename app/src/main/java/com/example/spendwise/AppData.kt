@@ -45,7 +45,6 @@ object AppData {
     }
 
     // ── Authentication ────────────────────────────────────────────────────────
-
     suspend fun login(email: String, password: String): Boolean = withContext(Dispatchers.IO) {
         val user = db.userDao().login(email, password)
         if (user != null) {

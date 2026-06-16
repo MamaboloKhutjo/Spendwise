@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F2F2">
+    android:background="#F2F2F2"
+    tools:context=".DashboardActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +27,8 @@
                 android:paddingStart="20dp"
                 android:paddingTop="48dp"
                 android:paddingEnd="20dp"
-                android:paddingBottom="28dp">
+                android:paddingBottom="28dp"
+                android:baselineAligned="false">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -33,7 +36,8 @@
                     android:text="•••"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="8dp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -41,9 +45,10 @@
                     android:text="Dashboard"
                     android:textColor="#FFFFFF"
                     android:textSize="32sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
-                <!-- Balance Summary -->
+                <!-- Available Balance (Total) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -60,7 +65,8 @@
                             android:layout_height="wrap_content"
                             android:text="Available Balance"
                             android:textColor="#AAAAAA"
-                            android:textSize="12sp"/>
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
                         <TextView
                             android:id="@+id/tvMoneyLeft"
                             android:layout_width="wrap_content"
@@ -68,7 +74,8 @@
                             android:text="R 0.00"
                             android:textColor="#FFFFFF"
                             android:textSize="32sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -78,10 +85,12 @@
                     android:background="#33FFFFFF"
                     android:layout_marginVertical="16dp"/>
 
+                <!-- Monthly Overview Row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -91,17 +100,43 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Monthly Budget"
+                            android:text="Monthly Income"
                             android:textColor="#AAAAAA"
-                            android:textSize="11sp"/>
+                            android:textSize="11sp"
+                            tools:ignore="HardcodedText" />
                         <TextView
-                            android:id="@+id/tvMonthlyBudget"
+                            android:id="@+id/tvMonthlyIncomeHeader"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="R 0"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monthly Spent"
+                            android:textColor="#AAAAAA"
+                            android:textSize="11sp"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/tvTotalSpent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="R 0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -113,21 +148,22 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Spent So Far"
+                            android:text="Budget"
                             android:textColor="#AAAAAA"
-                            android:textSize="11sp"/>
+                            android:textSize="11sp"
+                            tools:ignore="HardcodedText" />
                         <TextView
-                            android:id="@+id/tvTotalSpent"
+                            android:id="@+id/tvMonthlyBudget"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="R 0"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Progress relative to Monthly Budget -->
                 <ProgressBar
                     android:id="@+id/budgetProgress"
                     style="?android:attr/progressBarStyleHorizontal"
@@ -140,12 +176,13 @@
 
             </LinearLayout>
 
-            <!-- Income / Expense Cards -->
+            <!-- Quick Stats Cards (Income vs Expense) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:baselineAligned="false">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
@@ -156,8 +193,8 @@
                     app:cardElevation="4dp"
                     app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Income" android:textColor="#444444" android:textSize="13sp"/>
-                        <TextView android:id="@+id/tvIncome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+R0" android:textColor="#2E7D32" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Income" android:textColor="#444444" android:textSize="13sp" tools:ignore="HardcodedText" />
+                        <TextView android:id="@+id/tvIncome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+R0" android:textColor="#2E7D32" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="4dp" tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -170,12 +207,13 @@
                     app:cardElevation="4dp"
                     app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Expenses" android:textColor="#444444" android:textSize="13sp"/>
-                        <TextView android:id="@+id/tvExpense" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-R0" android:textColor="#C62828" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Expenses" android:textColor="#444444" android:textSize="13sp" tools:ignore="HardcodedText" />
+                        <TextView android:id="@+id/tvExpense" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-R0" android:textColor="#C62828" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="4dp" tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
+            <!-- Goal Advice -->
             <TextView
                 android:id="@+id/tvGoalAdvice"
                 android:layout_width="match_parent"
@@ -184,7 +222,37 @@
                 android:textColor="#666666"
                 android:textSize="14sp"
                 android:paddingHorizontal="16dp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText" />
+
+            <!-- Detailed Financial Graph -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Financial Status (In vs Out)"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- Recent Transactions -->
             <TextView
@@ -196,47 +264,51 @@
                 android:textStyle="bold"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText" />
 
             <LinearLayout
                 android:id="@+id/transactionContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp"
+                android:paddingHorizontal="16dp"/>
 
         </LinearLayout>
     </ScrollView>
 
+    <!-- Bottom Nav -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
         android:background="#2C2C2E"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
-        <LinearLayout android:id="@+id/navDashboard" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_dashboard" android:tint="#F5A623"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dashboard" android:textColor="#F5A623" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        <LinearLayout android:id="@+id/navDashboard" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" tools:ignore="UseCompoundDrawables">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_dashboard" app:tint="#F5A623" android:contentDescription="Dashboard"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dashboard" android:textColor="#F5A623" android:textSize="11sp" android:layout_marginTop="3dp" tools:ignore="HardcodedText" />
         </LinearLayout>
-        <LinearLayout android:id="@+id/navTransactions" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_wallet" android:tint="#AAAAAA"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transactions" android:textColor="#AAAAAA" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        <LinearLayout android:id="@+id/navTransactions" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" tools:ignore="UseCompoundDrawables">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_wallet" app:tint="#AAAAAA" android:contentDescription="Transactions"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transactions" android:textColor="#AAAAAA" android:textSize="11sp" android:layout_marginTop="3dp" tools:ignore="HardcodedText" />
         </LinearLayout>
         <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center">
             <View android:layout_width="56dp" android:layout_height="56dp"/>
         </LinearLayout>
-        <LinearLayout android:id="@+id/navBudget" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_budget" android:tint="#AAAAAA"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Budget" android:textColor="#AAAAAA" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        <LinearLayout android:id="@+id/navBudget" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" tools:ignore="UseCompoundDrawables">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_budget" app:tint="#AAAAAA" android:contentDescription="Budget"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Budget" android:textColor="#AAAAAA" android:textSize="11sp" android:layout_marginTop="3dp" tools:ignore="HardcodedText" />
         </LinearLayout>
-        <LinearLayout android:id="@+id/navMe" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_profile" android:tint="#AAAAAA"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Me" android:textColor="#AAAAAA" android:textSize="10sp" android:layout_marginTop="3dp"/>
+        <LinearLayout android:id="@+id/navMe" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" tools:ignore="UseCompoundDrawables">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_profile" app:tint="#AAAAAA" android:contentDescription="Profile"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Me" android:textColor="#AAAAAA" android:textSize="11sp" android:layout_marginTop="3dp" tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView android:id="@+id/fabAdd" android:layout_width="56dp" android:layout_height="56dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:layout_marginBottom="20dp" android:src="@drawable/ic_add" android:background="@drawable/fab_bg" android:padding="14dp" android:elevation="6dp"/>
+    <ImageView android:id="@+id/fabAdd" android:layout_width="56dp" android:layout_height="56dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:layout_marginBottom="20dp" android:src="@drawable/ic_add" android:background="@drawable/fab_bg" android:padding="14dp" android:elevation="6dp" android:contentDescription="Add Transaction"/>
 
 </RelativeLayout>
